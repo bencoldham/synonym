@@ -14,8 +14,7 @@ for _ in range(int(numberoftimes)):
     for word in phrase.split(' '):
         try:
             #picks a random synonym to replace the word with
-            synset = wn.synsets(word)
-            synonym = synset[0].lemma_names()
+            synonym = wn.synsets(word)[0].lemma_names()
             rephrased += str(" " + synonym[rand.randint(0,len(synonym))])
 
         # if there is a synonym it will be used, otherwise the original word is used
